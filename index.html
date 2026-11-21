@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagnóstico da advertência | Blindagem Trabalhista</title>
+<meta name="description" content="Responda 14 perguntas e descubra na hora se as advertências da sua empresa aguentam uma justa causa.">
+<meta property="og:title" content="Sua advertência aguenta uma justa causa?">
+<meta property="og:description" content="Diagnóstico gratuito em 3 minutos, por Angélica Ferreira, advogada trabalhista para empresas.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--card:#0d0d0d;--gold:#FAB305;--gold2:#ffcd4d;--white:#fff;--text:#EDEDED;--muted:#BDBDBD;--line:#2a2105;--err:#ff6b5a;--ok:#5fd28a}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--white);font-family:Montserrat,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body{min-height:100vh;background:radial-gradient(900px 600px at 85% -10%,rgba(250,179,5,.18),transparent 60%),var(--bg)}
+.top{height:4px;background:var(--gold);box-shadow:0 0 18px rgba(250,179,5,.8)}
+.wrap{max-width:620px;margin:0 auto;padding:28px 18px 60px}
+.mark{line-height:1;margin-bottom:28px}
+.mark .b{font-size:22px;font-weight:800;color:var(--gold);letter-spacing:1px}
+.mark .b sup{font-size:11px}
+.mark .t{font-size:10px;font-weight:600;color:var(--gold);letter-spacing:2px;margin-top:4px}
+h1{font-size:30px;line-height:1.12;font-weight:800;letter-spacing:-.5px;margin-bottom:14px}
+h2{font-size:22px;line-height:1.25;font-weight:800;margin-bottom:12px}
+.gold{color:var(--gold)}
+p{font-size:16px;line-height:1.55;color:var(--text)}
+.lead{font-size:17px;margin-bottom:22px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px}
+.pills span{border:1px solid var(--line);background:#120e02;color:var(--gold2);font-size:13px;font-weight:600;padding:7px 11px;border-radius:999px}
+.card{background:var(--card);border:1px solid #1f1f1f;border-radius:16px;padding:22px 18px}
+label{display:block;font-size:13px;font-weight:700;color:var(--muted);margin:14px 0 6px;letter-spacing:.3px}
+input,select{width:100%;font:inherit;font-size:16px;color:var(--white);background:#000;border:1.5px solid #333;border-radius:10px;padding:13px 12px;outline:none;-webkit-appearance:none;appearance:none}
+select{background-image:linear-gradient(45deg,transparent 50%,var(--gold) 50%),linear-gradient(135deg,var(--gold) 50%,transparent 50%);background-position:calc(100% - 18px) 55%,calc(100% - 13px) 55%;background-size:5px 5px;background-repeat:no-repeat}
+input:focus,select:focus{border-color:var(--gold)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+@media(max-width:480px){.row{grid-template-columns:1fr}}
+.consent{display:flex;gap:12px;align-items:flex-start;margin-top:18px;font-size:13px;line-height:1.5;color:var(--muted)}
+.consent input{width:22px;height:22px;flex:0 0 22px;padding:0;border-radius:6px;margin-top:1px;cursor:pointer}
+.consent input:checked{background:var(--gold);border-color:var(--gold);box-shadow:inset 0 0 0 4px #000}
+.btn{display:block;width:100%;text-align:center;text-decoration:none;border:0;cursor:pointer;font:inherit;font-weight:800;font-size:16px;letter-spacing:.3px;color:#000;background:var(--gold);border-radius:12px;padding:16px;margin-top:20px;box-shadow:0 0 24px rgba(250,179,5,.35)}
+.btn:disabled{opacity:.5;cursor:wait}
+.btn.ghost{background:transparent;color:var(--gold);border:2px solid var(--gold);box-shadow:none;margin-top:12px}
+.err{color:var(--err);font-size:13px;margin-top:10px;min-height:1px}
+.small{font-size:12px;color:#8a8a8a;line-height:1.5;margin-top:16px}
+.hide{display:none!important}
+/* perguntas */
+.prog{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:var(--muted);margin-bottom:8px;letter-spacing:.5px}
+.bar{height:6px;background:#1c1c1c;border-radius:9px;overflow:hidden;margin-bottom:26px}
+.bar i{display:block;height:100%;width:0;background:var(--gold);box-shadow:0 0 10px var(--gold);transition:width .3s}
+.bloco{font-size:12px;font-weight:800;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.q{font-size:21px;line-height:1.35;font-weight:700;margin-bottom:10px}
+.hint{font-size:14px;color:var(--muted);line-height:1.5;margin-bottom:22px}
+.opts{display:grid;gap:10px}
+.opt{width:100%;text-align:left;font:inherit;font-size:16px;font-weight:600;color:var(--white);background:#0b0b0b;border:1.5px solid #2c2c2c;border-radius:12px;padding:16px;cursor:pointer;display:flex;gap:12px;align-items:center}
+.opt.sel{border-color:var(--gold);background:#141003}
+.opt b{flex:0 0 26px;height:26px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--gold)}
+.back{background:none;border:0;color:var(--muted);font:inherit;font-size:14px;margin-top:18px;cursor:pointer;text-decoration:underline}
+@media(hover:hover){.opt:hover{border-color:var(--gold);background:#141003}}
+/* resultado */
+.badge{display:inline-block;font-weight:800;font-size:13px;letter-spacing:2px;padding:8px 14px;border-radius:999px;margin-bottom:14px}
+.r-Alto .badge{background:#3a0f0a;color:#ff8a7a;border:1px solid #ff6b5a}
+.r-Médio .badge{background:#2a2003;color:var(--gold2);border:1px solid var(--gold)}
+.r-Baixo .badge{background:#0a2a16;color:#8ee6ad;border:1px solid var(--ok)}
+.meter{position:relative;height:12px;border-radius:9px;background:linear-gradient(90deg,#3fbf73,#FAB305 50%,#ff5a47);margin:18px 0 6px}
+.meter i{position:absolute;top:-5px;width:22px;height:22px;border-radius:50%;background:#fff;border:4px solid #000;box-shadow:0 0 0 2px #fff;transform:translateX(-50%);transition:left .8s}
+.scale{display:flex;justify-content:space-between;font-size:11px;color:#8a8a8a;font-weight:600;margin-bottom:22px}
+.gaps{list-style:none;margin:8px 0 4px}
+.gaps li{border-left:4px solid var(--gold);background:#0b0b0b;border-radius:0 12px 12px 0;padding:14px 14px 14px 16px;margin-bottom:10px}
+.gaps li.crit{border-left-color:#ff6b5a}
+.gaps strong{display:block;font-size:15px;margin-bottom:4px}
+.gaps span{font-size:14px;color:var(--muted);line-height:1.5}
+.gaps em{display:block;font-style:normal;font-size:12px;color:var(--gold);margin-top:6px;font-weight:600}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0 4px}
+.steps div{border:1.5px solid var(--gold);border-radius:12px;padding:12px 10px;font-size:12px;color:var(--muted);line-height:1.4}
+.steps b{display:block;color:var(--white);font-size:14px;margin-bottom:4px}
+.box{border:1px solid var(--line);background:#100c02;border-radius:14px;padding:18px;margin-top:22px}
+.sec{margin-top:30px}
+.foot{margin-top:34px;padding-top:18px;border-top:1px solid #1f1f1f;font-size:12px;color:#8a8a8a;line-height:1.6}
+.spin{display:inline-block;width:16px;height:16px;border:3px solid rgba(0,0,0,.25);border-top-color:#000;border-radius:50%;animation:s 0.8s linear infinite;vertical-align:-3px;margin-right:8px}
+@keyframes s{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div class="top"></div>
+<div class="wrap">
+  <div class="mark"><div class="b">BLINDAGEM TRABALHISTA<sup>®</sup></div><div class="t">ANGÉLICA FERREIRA · ADVOCACIA TRABALHISTA PARA EMPRESAS</div></div>
+
+  <!-- ETAPA 1: captura -->
+  <section id="s-cadastro">
+    <h1>Sua advertência <span class="gold">aguenta</span> uma justa causa?</h1>
+    <p class="lead">Responda 14 perguntas rápidas sobre como a sua empresa adverte empregados e receba na hora um diagnóstico do risco de a justa causa ser revertida na Justiça do Trabalho, com o que corrigir primeiro.</p>
+    <div class="pills"><span>3 minutos</span><span>Resultado na hora</span><span>Gratuito</span></div>
+
+    <form id="f" class="card" novalidate>
+      <label for="nome">Seu nome</label>
+      <input id="nome" autocomplete="name" required maxlength="120">
+      <div class="row">
+        <div><label for="whatsapp">WhatsApp com DDD</label>
+          <input id="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(31) 99999-9999" required maxlength="20"></div>
+        <div><label for="email">E-mail</label>
+          <input id="email" type="email" inputmode="email" autocomplete="email" required maxlength="160"></div>
+      </div>
+      <label for="empresa">Empresa</label>
+      <input id="empresa" autocomplete="organization" maxlength="120" required>
+      <div class="row">
+        <div><label for="empregados">Nº de empregados</label>
+          <select id="empregados" required><option value="">Selecione</option><option>1 a 10</option><option>11 a 20</option><option>21 a 50</option><option>51 a 100</option><option>Mais de 100</option></select></div>
+        <div><label for="cargo">Você é</label>
+          <select id="cargo" required><option value="">Selecione</option><option>Sócio ou dono</option><option>RH ou DP</option><option>Gestor ou líder</option><option>Contador</option><option>Outro</option></select></div>
+      </div>
+      <label for="acao">A empresa teve ação trabalhista nos últimos 2 anos?</label>
+      <select id="acao" required><option value="">Selecione</option><option>Não</option><option>Sim, uma</option><option>Sim, mais de uma</option><option>Prefiro não dizer</option></select>
+
+      <label class="consent"><input type="checkbox" id="lgpd"><span id="lgpd-txt">Autorizo Angélica Ferreira Advocacia a usar meus dados para enviar o resultado deste diagnóstico e conteúdos sobre direito do trabalho para empresas, por e-mail e WhatsApp. Posso pedir a exclusão a qualquer momento. Meus dados não serão vendidos nem compartilhados (Lei 13.709/2018, LGPD).</span></label>
+      <div class="err" id="err1"></div>
+      <button class="btn" id="go" type="submit">Começar meu diagnóstico</button>
+    </form>
+  </section>
+
+  <!-- ETAPA 2: checklist -->
+  <section id="s-quiz" class="hide">
+    <div class="prog"><span id="p-txt">Pergunta 1 de 14</span><span id="p-pct">0%</span></div>
+    <div class="bar"><i id="p-bar"></i></div>
+    <div class="bloco" id="q-bloco"></div>
+    <div class="q" id="q-txt"></div>
+    <div class="hint" id="q-hint"></div>
+    <div class="opts" id="q-opts"></div>
+    <button class="back" id="q-back" type="button">Voltar</button>
+  </section>
+
+  <!-- ETAPA 3: resultado -->
+  <section id="s-result" class="hide">
+    <div id="r-wrap">
+      <span class="badge" id="r-badge"></span>
+      <h1 id="r-title"></h1>
+      <p id="r-text"></p>
+      <div class="meter"><i id="r-dot" style="left:0"></i></div>
+      <div class="scale"><span>Baixo</span><span>Médio</span><span>Alto</span></div>
+    </div>
+
+    <div class="box">
+      <h2>Quer corrigir isso antes do próximo desligamento?</h2>
+      <p>Eu reviso o modelo de advertência e a rotina da sua empresa para que cada punição sirva de prova se a dispensa for discutida na Justiça.</p>
+      <a class="btn" id="cta" href="#" target="_blank" rel="noopener">Falar com a Angélica</a>
+      <a class="btn ghost hide" id="cta2" href="#" target="_blank" rel="noopener">Agendar uma conversa</a>
+    </div>
+
+    <div class="sec" id="r-gaps-sec">
+      <h2>O que corrigir primeiro</h2>
+      <ul class="gaps" id="r-gaps"></ul>
+    </div>
+
+    <div class="sec">
+      <h2>A escada até a justa causa</h2>
+      <p>Atraso isolado é falta leve. A justa causa por atraso costuma exigir repetição depois de punições anteriores, documentadas uma a uma.</p>
+      <div class="steps">
+        <div><b>1. Advertência</b>No primeiro atraso relevante, por escrito.</div>
+        <div><b>2. Suspensão</b>Se repetir. Até 30 dias (CLT, art. 474).</div>
+        <div><b>3. Justa causa</b>Se persistir, por desídia (CLT, art. 482, "e").</div>
+      </div>
+      <p class="small">Na Justiça do Trabalho, quem alega a justa causa precisa prová-la (CLT, art. 818, II). Sem papel, a dispensa tende a virar dispensa sem justa causa, com aviso prévio, 13º, férias com 1/3 e multa de 40% do FGTS.</p>
+    </div>
+
+    <div class="foot">Diagnóstico informativo e de caráter geral, feito a partir das suas respostas. Não substitui a análise de um caso específico, que depende dos documentos da empresa.<br>Angélica Ferreira · OAB/MG 89.503 · @angelicaoferreira</div>
+  </section>
+</div>
+
+<script>
+var CFG = {
+  // Endereço do Apps Script que grava na planilha (termina em /exec)
+  endpoint: 'https://script.google.com/macros/s/AKfycbyg8HyPY1t3GoH19goYQ_H2Kyy2APgK-geN_1KPWoe__4r2bjijMzEE_2cWFgi3466onw/exec',
+  whatsapp: '553498080106',
+  instagram: 'angelicaoferreira',
+  agenda: '',
+  origem: (new URLSearchParams(location.search).get('origem') || 'instagram-dm').slice(0, 40)
+};
+
+var Q = [
+ {b:'Antes de advertir', t:'Antes de considerar atraso, vocês desconsideram variações de até 5 minutos por marcação, com limite de 10 minutos por dia?', h:'Essas variações não contam como atraso.', base:'CLT, art. 58, § 1º; Súmula 366 do TST', w:1,
+  fix:'Advertir dentro da tolerância legal', why:'Punir variações de até 5 minutos por marcação (10 por dia) torna a advertência indevida e contamina as punições seguintes.'},
+ {b:'Antes de advertir', t:'Os horários de entrada e saída ficam registrados em controle de ponto?', h:'Manual, mecânico ou eletrônico. Para empresas com mais de 20 empregados ele é obrigatório.', base:'CLT, art. 74, § 2º; Súmula 338 do TST', w:2, crit:true,
+  fix:'Registrar a jornada em ponto', why:'O ponto é a primeira prova que o juiz pede. Sem ele, o atraso vira palavra contra palavra.'},
+ {b:'Antes de advertir', t:'O horário de trabalho está formalizado em contrato, regulamento interno ou comunicado assinado pelo empregado?', h:'É o que mostra qual regra foi descumprida.', base:'', w:1,
+  fix:'Formalizar o horário por escrito', why:'Sem documento assinado, a empresa não consegue mostrar que o empregado conhecia a regra.'},
+ {b:'Antes de advertir', t:'A advertência é aplicada logo depois do fato, em poucos dias?', h:'Deixar passar semanas pode ser lido como perdão tácito.', base:'', w:1,
+  fix:'Punir logo depois do fato', why:'A demora pode ser lida como perdão tácito e invalidar a punição.'},
+ {b:'Antes de advertir', t:'Cada falta recebe uma única punição?', h:'O mesmo atraso não pode gerar advertência e depois suspensão.', base:'', w:1,
+  fix:'Uma falta, uma punição', why:'Punir o mesmo fato duas vezes leva à anulação da penalidade.'},
+ {b:'Antes de advertir', t:'Empregados com o mesmo comportamento recebem o mesmo tratamento?', h:'Advertir um e tolerar o mesmo atraso de outro enfraquece a prova.', base:'', w:1,
+  fix:'Tratar casos iguais de forma igual', why:'Tratamento desigual abre espaço para alegação de perseguição e enfraquece a prova.'},
+ {b:'O documento', t:'A advertência é feita por escrito, com identificação completa da empresa e do empregado (nome, função e matrícula ou CPF)?', h:'Advertência verbal praticamente não serve de prova.', base:'', w:2, crit:true,
+  fix:'Advertir sempre por escrito', why:'Advertência verbal ou sem identificação completa praticamente não serve de prova.'},
+ {b:'O documento', t:'O documento descreve o fato de forma objetiva: data, horário previsto e horário registrado, sem adjetivos ou opiniões?', h:'', base:'', w:1,
+  fix:'Descrever o fato de forma objetiva', why:'Adjetivos e opiniões no lugar de data e horário fragilizam o documento e podem gerar alegação de dano moral.'},
+ {b:'O documento', t:'O documento indica a regra descumprida e avisa que a repetição pode levar a medidas mais severas?', h:'Inclui local, data e assinatura de quem representa a empresa.', base:'', w:1,
+  fix:'Indicar a regra e avisar sobre a repetição', why:'Sem esses elementos, fica difícil sustentar a gradação das punições.'},
+ {b:'Ciência do empregado', t:'O empregado assina e data a advertência? Se ele se recusa, ela é lida na presença de duas testemunhas, que assinam com nome e CPF?', h:'Assinar significa ciência, não concordância.', base:'', w:2, crit:true,
+  fix:'Colher assinatura ou duas testemunhas', why:'Sem ciência comprovada, o empregado pode alegar que nunca foi advertido.'},
+ {b:'Ciência do empregado', t:'Quando a advertência é eletrônica, vocês usam plataforma de assinatura que comprova autoria e integridade, e não só WhatsApp?', h:'Se vocês não usam advertência eletrônica, responda "Sim".', base:'MP 2.200-2/2001, art. 10, § 2º', w:1,
+  fix:'Trocar o WhatsApp por assinatura verificável', why:'Mensagem de WhatsApp sozinha é prova frágil.'},
+ {b:'Ciência do empregado', t:'Uma via fica com o empregado e o original vai para a pasta funcional?', h:'', base:'', w:1,
+  fix:'Arquivar o original na pasta funcional', why:'Documento que não é encontrado na hora da defesa é o mesmo que documento inexistente.'},
+ {b:'A escada até a justa causa', t:'Antes de uma justa causa por atraso, vocês seguem a gradação advertência, suspensão e só depois justa causa, com um documento para cada degrau?', h:'Pular degraus sem falta grave costuma levar à reversão.', base:'CLT, art. 474 e art. 482, "e"', w:2, crit:true,
+  fix:'Seguir a escada de punições', why:'Pular degraus sem falta grave costuma levar à reversão da justa causa.'},
+ {b:'A escada até a justa causa', t:'Os documentos ficam guardados durante todo o contrato e por mais 2 anos depois do desligamento?', h:'É o prazo que o ex-empregado tem para entrar com ação, cobrando os últimos 5 anos.', base:'Constituição Federal, art. 7º, XXIX', w:1,
+  fix:'Guardar os documentos pelo prazo certo', why:'O ex-empregado tem até 2 anos após a saída para entrar com ação, cobrando os últimos 5 anos.'}
+];
+var OPTS = [['Sim', 0], ['Às vezes / Não sei', 0.5], ['Não', 1]];
+
+var st = {id:null, i:0, a:[], saving:false};
+var $ = function(id){ return document.getElementById(id); };
+function show(s){ ['s-cadastro','s-quiz','s-result'].forEach(function(x){ $(x).classList.toggle('hide', x!==s); }); window.scrollTo(0,0); }
+function novoId(){
+  var a = new Uint8Array(6); (window.crypto || window.msCrypto).getRandomValues(a);
+  return Array.prototype.map.call(a, function(b){ return ('0' + b.toString(16)).slice(-2); }).join('');
+}
+// Envia para a planilha. "no-cors" + text/plain evita bloqueio entre domínios; a resposta não é lida.
+function enviar(corpo){
+  return fetch(CFG.endpoint, { method: 'POST', mode: 'no-cors', keepalive: true,
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(corpo) });
+}
+
+$('whatsapp').addEventListener('input', function(e){
+  var d = e.target.value.replace(/\D/g,'').slice(0,11);
+  var o = d;
+  if (d.length > 2) o = '(' + d.slice(0,2) + ') ' + d.slice(2);
+  if (d.length > 7) o = '(' + d.slice(0,2) + ') ' + d.slice(2, d.length-4) + '-' + d.slice(-4);
+  e.target.value = o;
+});
+
+$('f').addEventListener('submit', function(e){
+  e.preventDefault();
+  var d = {
+    nome: $('nome').value.trim(), whatsapp: $('whatsapp').value, email: $('email').value.trim(),
+    empresa: $('empresa').value.trim(), empregados: $('empregados').value, cargo: $('cargo').value,
+    acao: $('acao').value, consentimento: $('lgpd').checked, textoConsentimento: $('lgpd-txt').textContent
+  };
+  var w = d.whatsapp.replace(/\D/g,'');
+  var msg = '';
+  if (!d.nome) msg = 'Informe seu nome.';
+  else if (w.length < 10 || w.length > 11) msg = 'Informe o WhatsApp com DDD.';
+  else if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email)) msg = 'Informe um e-mail válido.';
+  else if (!d.empresa || !d.empregados || !d.cargo || !d.acao) msg = 'Preencha todos os campos.';
+  else if (!d.consentimento) msg = 'Para continuar, marque a autorização de uso dos dados.';
+  $('err1').textContent = msg;
+  if (msg) return;
+  d.whatsapp = '55' + w;
+  d.origem = CFG.origem;
+  st.lead = d;
+  st.id = st.id || novoId();
+  enviar({ tipo: 'lead', id: st.id, dados: d }).catch(function(){});
+  st.i = 0; render(); show('s-quiz');
+});
+
+function render(){
+  var q = Q[st.i];
+  $('p-txt').textContent = 'Pergunta ' + (st.i+1) + ' de ' + Q.length;
+  var pct = Math.round(st.i / Q.length * 100);
+  $('p-pct').textContent = pct + '%'; $('p-bar').style.width = pct + '%';
+  $('q-bloco').textContent = q.b; $('q-txt').textContent = q.t;
+  $('q-hint').textContent = q.h + (q.base ? (q.h ? ' ' : '') + '(' + q.base + ')' : '');
+  $('q-hint').classList.toggle('hide', !q.h && !q.base);
+  var box = $('q-opts'); box.innerHTML = '';
+  OPTS.forEach(function(o, k){
+    var el = document.createElement('button'); el.type = 'button'; el.className = 'opt' + (st.a[st.i] === k ? ' sel' : '');
+    el.innerHTML = '<b>' + 'ABC'[k] + '</b>'; el.appendChild(document.createTextNode(o[0]));
+    el.onclick = function(){ st.a[st.i] = k; if (st.i < Q.length-1){ st.i++; render(); window.scrollTo(0,0); } else finish(); };
+    box.appendChild(el);
+  });
+  $('q-back').classList.toggle('hide', st.i === 0);
+}
+$('q-back').onclick = function(){ if (st.i > 0){ st.i--; render(); } };
+
+function finish(){
+  var tot = 0, max = 0, critNo = false, gaps = [];
+  Q.forEach(function(q, k){
+    var v = OPTS[st.a[k]][1]; tot += v*q.w; max += q.w;
+    if (q.crit && v === 1) critNo = true;
+    if (v > 0) gaps.push({q:q, v:v, s:v*q.w + (q.crit?1:0)});
+  });
+  var pct = Math.round(tot/max*100);
+  var risco = (pct >= 40 || critNo) ? 'Alto' : (pct >= 15 ? 'Médio' : 'Baixo');
+  gaps.sort(function(a,b){ return b.s - a.s; });
+
+  var T = {
+    Alto: ['Risco alto', 'Hoje, uma justa causa baseada nas advertências da sua empresa tem grande chance de ser revertida.', 'As falhas abaixo são exatamente as que o advogado do empregado procura. Se a dispensa for discutida na Justiça, a tendência é que vire dispensa sem justa causa, com o pagamento de todas as verbas e da multa de 40% do FGTS.'],
+    'Médio': ['Risco médio', 'A base existe, mas há falhas que podem derrubar a justa causa.', 'Sua empresa já faz parte do trabalho. Os pontos abaixo são os que mais pesam numa discussão judicial e costumam ser simples de corrigir com um modelo e uma rotina bem definidos.'],
+    Baixo: ['Risco baixo', 'Sua rotina de advertência está bem estruturada.', 'Continue documentando cada degrau. Uma revisão periódica dos modelos e da pasta funcional mantém essa proteção em dia, principalmente quando entram novos gestores.']
+  };
+  $('r-wrap').className = 'r-' + risco;
+  $('r-badge').textContent = T[risco][0].toUpperCase();
+  $('r-title').textContent = T[risco][1];
+  $('r-text').textContent = T[risco][2];
+  setTimeout(function(){ $('r-dot').style.left = ({Baixo: 12 + pct*0.6, 'Médio': 50, Alto: 88})[risco] + '%'; }, 100);
+
+  var ul = $('r-gaps'); ul.innerHTML = '';
+  gaps.slice(0, 5).forEach(function(g){
+    var li = document.createElement('li'); if (g.q.crit && g.v === 1) li.className = 'crit';
+    var s = document.createElement('strong'); s.textContent = g.q.fix; li.appendChild(s);
+    var sp = document.createElement('span'); sp.textContent = g.q.why; li.appendChild(sp);
+    if (g.q.base){ var em = document.createElement('em'); em.textContent = g.q.base; li.appendChild(em); }
+    ul.appendChild(li);
+  });
+  $('r-gaps-sec').classList.toggle('hide', gaps.length === 0);
+
+  var primeiro = (st.lead && st.lead.nome || '').split(' ')[0];
+  var texto = 'Olá, Angélica! Sou ' + primeiro + (st.lead && st.lead.empresa ? ', da ' + st.lead.empresa : '') + '. Fiz o diagnóstico da advertência e meu resultado foi risco ' + risco.toUpperCase() + '. Quero entender como corrigir.';
+  $('cta').href = CFG.whatsapp ? 'https://wa.me/' + CFG.whatsapp + '?text=' + encodeURIComponent(texto) : 'https://ig.me/m/' + CFG.instagram;
+  $('cta').textContent = CFG.whatsapp ? 'Falar com a Angélica no WhatsApp' : 'Falar com a Angélica no Instagram';
+  if (CFG.agenda){ $('cta2').href = CFG.agenda; $('cta2').classList.remove('hide'); }
+
+  $('p-bar').style.width = '100%';
+  show('s-result');
+
+  var payload = {
+    lead: st.lead,
+    risco: risco, pontuacao: pct, origem: CFG.origem,
+    pontosFracos: gaps.map(function(g){ return g.q.fix; }).join('; '),
+    respostas: st.a.map(function(k){ return OPTS[k][0]; })
+  };
+  // O cadastro vai junto: se o primeiro envio não chegou, a planilha grava os dois de uma vez.
+  enviar({ tipo: 'diagnostico', id: st.id, dados: payload }).catch(function(){});
+}
+</script>
+</body>
+</html>
